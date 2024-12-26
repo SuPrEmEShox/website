@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Requisitos para Conselho</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #6400a7, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px #6400a7;
+            overflow-y: auto;
+            max-height: 90%;
+        }
+
+        .container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: #6400a7;
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background-color: #23272a;
+        }
+
+        .attention {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: attentionBlink 1.5s infinite;
+            color: yellow;
+        }
+
+        @keyframes attentionBlink {
+            0%, 100% { color: yellow; }
+            50% { color: red; }
+        }
+
+        ul {
+            list-style: none;
+            text-align: left;
+            margin-top: 10px;
+            padding: 0 15px;
+        }
+
+        ul li {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            ul li {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="attention">[REQUISITOS PARA CONSELHO 2024] - ATENÇÃO: Para fazer parte do conselho, é obrigatório que você possua estes requisitos, caso contrário, sua inscrição será negada de imediato!</p>
+        <ul>
+            <li>Idade mínima 18+</li>
+            <li>Level mínimo 30+ (Queremos conselheiros(as) que já possua um bom tempo de experiência no game)</li>
+            <li>Ter Discord</li>
+            <li>Ter Microfone (Para participar de reuniões)</li>
+            <li>Ter responsabilidade</li>
+            <li>Ser extremamente ativo(a) no Avakin e Instagram</li>
+            <li>Saber das regras da família (Neste fator, iremos fazer algumas perguntas na call para testar seu conhecimento, portanto, estude-as)</li>
+            <li>Ter maturidade</li>
+            <li>Ser educado(a)</li>
+            <li>Ser objetivo(a)</li>
+            <li>Ser esforçado(a)</li>
+            <li>Ser paciênte</li>
+            <li>Saber agir em momentos de tensão/conflito</li>
+        </ul>
+    </div>
+</body>
+</html>

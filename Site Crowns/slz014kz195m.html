@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>Inscrição para Membro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #6400a7, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            margin: 0;
+            color: white;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .form-container {
+            width: 90%;
+            max-width: 500px;
+            max-height: 90%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px #6400a7;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .form-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #6400a7;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto;
+            max-height: 70vh;
+            padding-right: 10px;
+        }
+
+        form::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        form::-webkit-scrollbar-thumb {
+            background-color: #6400a7;
+            border-radius: 10px;
+        }
+
+        form::-webkit-scrollbar-track {
+            background-color: #23272a;
+        }
+
+        input, textarea, select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            background-color: #2c2f33;
+            color: white;
+        }
+
+        textarea {
+            resize: none;
+            min-height: 100px;
+        }
+
+        button {
+            background-color: #6400a7;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px #6400a7;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .radio-group {
+            display: flex;
+            justify-content: space-around;
+            color: white;
+            font-size: 14px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        select {
+            appearance: none;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 140"><polygon points="70,100 25,40 115,40" fill="%23ffffff"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 15px;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px #6400a7;
+            display: none;
+        }
+
+        .modal h2 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .modal p {
+            color: #b0b0b0;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #6400a7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                width: 95%;
+                padding: 15px;
+            }
+
+            input, textarea, button {
+                font-size: 14px;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-header">Inscrição para Membro</div>
+        <form id="membroForm">
+            <input type="text" name="Nome Real" placeholder="Nome Real" required>
+            <input type="text" name="Idade" placeholder="Idade" required>
+            <input type="text" name="Estado onde mora" placeholder="Estado onde mora" required>
+            <input type="text" name="Signo" placeholder="Signo" required>
+            <input type="text" name="Quem indicou a família a você?" placeholder="Quem indicou a família a você?" required>
+
+            <div>
+                <p>Fez parte de alguma família?</p>
+                <div class="radio-group">
+                    <label><input type="radio" name="Fez parte de alguma família?" value="Sim" required> Sim</label>
+                    <label><input type="radio" name="Fez parte de alguma família?" value="Não" required> Não</label>
+                </div>
+            </div>
+
+            <input type="text" name="Qual família fez parte?" placeholder="Qual família fez parte? (SE SIM)" required>
+            <input type="text" name="Por que saiu da família?" placeholder="Por que saiu da família? (SE SIM)" required>
+            <input type="text" name="Qual seu objetivo em nossa família?" placeholder="Qual seu objetivo em nossa família?" required>
+            <input type="text" name="Está disposto a seguir as regras?" placeholder="Está disposto a seguir as regras?" required>
+            <input type="text" name="Tem disponibilidade pra trocar o Nick quando?" placeholder="Tem disponibilidade pra trocar o Nick quando?" required>
+
+            <label for="anoAvakin">Ano que começou a jogar Avakin:</label>
+            <select name="Ano que começou a jogar Avakin" id="anoAvakin" required>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+            </select>
+
+            <textarea name="Fale um pouco mais sobre você" placeholder="Fale um pouco mais sobre você aqui embaixo" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div class="modal" id="successModal">
+        <h2>Inscrição Enviada!</h2>
+        <p>Sua inscrição será analisada.</p>
+        <button onclick="fecharModal()">Ok</button>
+    </div>
+
+    <script>
+        const form = document.getElementById('membroForm');
+        const modal = document.getElementById('successModal');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            let content = '';
+
+            formData.forEach((value, key) => {
+                content += `**${key}:** ${value}\n`;
+            });
+
+            try {
+                await fetch('https://discord.com/api/webhooks/1321868053377581227/6SH3GxsOMigXKjZlwg4zhVd2U8aFHeQrPUW46EarwUku9tKM9xKOIPTP_pcJXkY7xKV8', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ content })
+                });
+
+                modal.style.display = 'block';
+                form.reset();
+            } catch (error) {
+                console.error('Erro ao enviar inscrição:', error);
+                modal.querySelector('p').textContent = 'Erro ao enviar inscrição. Tente novamente mais tarde.';
+                modal.style.display = 'block';
+            }
+        });
+
+        function fecharModal() {
+            modal.style.display = 'none';
+        }
+    </script>
+</body>
+</html>

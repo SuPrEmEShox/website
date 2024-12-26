@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família Crowns</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #6400a7, #000000);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+            margin: 0;
+            color: white;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .menu-container {
+            width: 90%;
+            max-width: 400px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px #6400a7;
+            text-align: center;
+            overflow-y: auto;
+            max-height: 90%;
+        }
+
+        .menu-container::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .menu-container::-webkit-scrollbar-thumb {
+            background-color: #6400a7;
+            border-radius: 10px;
+        }
+
+        .menu-container::-webkit-scrollbar-track {
+            background-color: #23272a;
+        }
+
+        .menu-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #6400a7;
+        }
+
+        .menu-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .menu-buttons a {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: #2c2f33;
+            border-radius: 8px;
+            transition: all 0.3s;
+            box-shadow: 0 0 10px #6400a7;
+        }
+
+        .menu-buttons a:hover {
+            background-color: #6400a7;
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.9);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 20px #6400a7;
+            z-index: 9999;
+        }
+
+        .modal h2 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #6400a7;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .modal button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <div class="menu-header">Painel de Usuário</div>
+        <div class="menu-buttons">
+            <a href="ab1829bskf914.html" target="_blank">Denunciar Membro</a>
+            <a href="tk92kmx104alv.html" target="_blank">Denunciar Conselheiro(a)</a>
+            <a href="1d6a16hdqd24.html" target="_blank">Inscrição p/Conselho</a>
+            <a href="slz014kz195m.html" target="_blank">Inscrição p/Membro</a>
+            <a href="28zsio24kzoi.html" target="_blank">Requisitos p/Membro</a>
+            <a href="kxl15928z72l.html" target="_blank">Requisitos p/Conselho</a>
+            <a href="1sdhg16adg25.html" target="_blank">Reportar Bug</a>
+            <a href="gakx05k1jdx01.html" target="_blank">Validação de Usuário</a>
+            <a href="x8al15x01mx9.html" target="_blank">Regras Gerais</a>
+            <a href="k1mma0x8xn19.html" target="_blank">Atualizações</a>
+        </div>
+    </div>
+
+    <audio id="backgroundMusic" src="http://jpdofunk3.com.br:8014/stream" type="audio/mpeg" preload="auto" loop></audio>
+
+    <div class="modal" id="welcomeModal">
+        <h2>Seja bem-vindo(a)!</h2>
+        <button onclick="closeModalAndPlayMusic()">Fechar</button>
+    </div>
+
+    <script>
+        const music = document.getElementById('backgroundMusic');
+        const modal = document.getElementById('welcomeModal');
+
+        function closeModalAndPlayMusic() {
+            modal.style.display = 'none';
+            music.play();
+        }
+
+        window.addEventListener('load', () => {
+            modal.style.display = 'block';
+        });
+
+        // Persist music across navigation
+        if (!sessionStorage.getItem('musicPlaying')) {
+            sessionStorage.setItem('musicPlaying', 'true');
+            music.play();
+        }
+
+        window.addEventListener('beforeunload', () => {
+            sessionStorage.setItem('musicTime', music.currentTime);
+        });
+
+        window.addEventListener('load', () => {
+            const savedTime = sessionStorage.getItem('musicTime');
+            if (savedTime) music.currentTime = parseFloat(savedTime);
+        });
+    </script>
+</body>
+</html>
